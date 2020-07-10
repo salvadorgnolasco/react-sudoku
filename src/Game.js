@@ -19,6 +19,8 @@
 import React from 'react';
 import Board from './Board';
 
+import sudokuHints from './hints-data';
+
 /**
  * Game class
  * 
@@ -31,21 +33,23 @@ class Game extends React.Component {
    * When the Game component is rendered
    * Then the hints values will be requested
    */
-  requestBoard(board) {
-    const uri = 'http://localhost:8080/sudoku/game/board/' + board
-    fetch(uri)
-      .then(res => res.json())
-      .then((data) => {
-        this.setState({
-          history: [{
-            moves: data.hints
-          }],
-          hints: data.hints,
-          solutionValues: data.solution,
-          currentValues: data.hints,
-        })
-      })
-      .catch(console.log)
+  requestBoard(id) {
+
+    const selectedBoard = sudokuHints.filter((item) => item.sudokuId === id);
+    const { hints, solution, sudokuId, level } = selectedBoard[0];
+
+    this.setState({
+      optionSelected: null,
+      bucketSelected: null,
+      history: [{
+        moves: hints
+      }],
+      hints: hints,
+      solutionValues: solution,
+      currentValues: hints,
+      sudokuId: sudokuId,
+      level: level,
+    });
   }
 
   /**
@@ -56,14 +60,21 @@ class Game extends React.Component {
   constructor(props) {
     super(props);
 
+    const selectedBoard = sudokuHints.filter((item) => item.sudokuId === 1);
+    const { hints, solution, sudokuId, level } = selectedBoard[0];
+
     this.state = {
       optionSelected: null,
       bucketSelected: null,
-      solutionValues: null,
-      currentValues: null,
+      history: [{
+        moves: hints
+      }],
+      hints: hints,
+      solutionValues: solution,
+      currentValues: hints,
+      sudokuId: sudokuId,
+      level: level,
     }
-
-    this.requestBoard('1');
   }
 
   /**
