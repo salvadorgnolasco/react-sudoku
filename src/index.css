@@ -1,13 +1,150 @@
-body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+.title {
+  color: #111; 
+  font-family: 'Helvetica Neue', sans-serif; 
+  font-size: 21px; 
+  font-weight: bold; 
+  letter-spacing: -1px; 
+  line-height: 1; 
+  text-align: center;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+.square {
+  background: #fff;
+  border: 1px solid #999;
+  float: left;
+  color: #111; 
+  font-family: 'Helvetica Neue', sans-serif; 
+  font-size: 28px;  
+  letter-spacing: -1px; 
+  line-height: 1; 
+  text-align: center;
+  line-height: 32px;
+  margin-right: -1px;
+  margin-top: -1px;
+  padding: 0;
+  text-align: center;
+  width: 32px;
+  height: 32px;
+}
+
+.optionspace {
+  width: 3rem;
+}
+
+.optionbucket {
+  background: #fff;
+  border: 1px solid #999;
+  float: left;
+  color: #111; 
+  font-family: 'Helvetica Neue', sans-serif; 
+  font-size: 28px;  
+  letter-spacing: -1px; 
+  line-height: 1; 
+  text-align: center;
+  line-height: 32px;
+  margin-right: -1px;
+  margin-top: -1px;
+  padding: 0;
+  text-align: center;
+  width: 32px;
+  height: 32px;
+}
+
+.optionselected {
+  background: rgb(245, 232, 116);
+  border: 1px solid #000;
+  float: left;
+  color: #111; 
+  font-family: 'Helvetica Neue', sans-serif; 
+  font-size: 28px;  
+  letter-spacing: -1px; 
+  line-height: 1; 
+  text-align: center;
+  line-height: 32px;
+  margin-right: -1px;
+  margin-top: -1px;
+  padding: 0;
+  text-align: center;
+  width: 32px;
+  height: 32px;
+}
+
+.columnsplit {
+  background: #fff;
+  border: 1px solid #999;
+  border-right: 3px solid #111;
+  float: left;
+  color: #000; 
+  font-family: 'Helvetica Neue', sans-serif; 
+  font-size: 28px;  
+  letter-spacing: -1px; 
+  line-height: 1; 
+  text-align: center;
+  line-height: 32px;
+  margin-right: -1px;
+  margin-top: -1px;
+  padding: 0;
+  text-align: center;
+  width: 32px;
+  height: 32px;
+}
+
+.rowsplit {
+  background: #fff;
+  border: 1px solid #999;
+  border-bottom: 3px solid #111;
+  float: left;
+  color: #000; 
+  font-family: 'Helvetica Neue', sans-serif; 
+  font-size: 28px;  
+  letter-spacing: -1px; 
+  line-height: 1; 
+  text-align: center;
+  line-height: 32px;
+  margin-right: -1px;
+  margin-top: -1px;
+  padding: 0;
+  text-align: center;
+  width: 32px;
+  height: 32px;
+}
+
+.cornersplit {
+  background: #fff;
+  border: 1px solid #999;
+  border-bottom: 3px solid #111;
+  border-right: 3px solid #111;
+  float: left;
+  color: #000; 
+  font-family: 'Helvetica Neue', sans-serif; 
+  font-size: 28px;  
+  letter-spacing: -1px; 
+  line-height: 1; 
+  text-align: center;
+  line-height: 32px;
+  margin-right: -1px;
+  margin-top: -1px;
+  padding: 0;
+  text-align: center;
+  width: 32px;
+  height: 32px;
+}
+
+.board {
+  border:1px solid black;
+  margin-left:auto;
+  margin-right:auto;
+}
+
+.board_no_border {
+  margin-left:auto;
+  margin-right:auto;
+}
+
+.hint {
+  background: rgb(223, 234, 240);
+}
+
+.error {
+  background: rgb(255, 224, 220);
 }
