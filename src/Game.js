@@ -112,7 +112,7 @@ class Game extends React.Component {
 
     this.setState({
       history: newHistory,
-      optionSelected: null,
+      optionSelected: null, 
       bucketSelected: bucketSelected,
       currentValues: currentValues,
     });
