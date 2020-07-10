@@ -60,7 +60,7 @@ class Game extends React.Component {
   constructor(props) {
     super(props);
 
-    const selectedBoard = sudokuHints.filter((item) => item.sudokuId === 1);
+    const selectedBoard = sudokuHints.filter((item) => item.sudokuId === 5);
     const { hints, solution, sudokuId, level } = selectedBoard[0];
 
     this.state = {
