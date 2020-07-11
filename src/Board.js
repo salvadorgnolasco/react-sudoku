@@ -96,6 +96,18 @@ class Board extends React.Component {
     );
   }
 
+  level(levelId) {
+    switch (levelId) {
+      case 2:
+        return "Normal";
+      case 3:
+        return "Difícil";
+      default:
+        return "Fácil";
+    }
+  }
+
+
   /**
    * Sudoku Board rendering
    */
@@ -111,14 +123,26 @@ class Board extends React.Component {
               <td>{this.renderBoard()}</td>
             </tr>
             <tr>
-              <td></td><td>
-                <button onClick={() => { this.props.onClickForErase() }}>
-                  {'<< Borrar'}
-                </button>
+              <td></td>
+              <td>
+                <div className="controls">
+                  <button
+                    onClick={() => { this.props.onClickForErase() }}>
+                    {'[x] borrar'}
+                  </button>
+                  <button
+                    onClick={() => { this.props.onClickNextBoard() }}>
+                    {'>> siguiente'}
+                  </button>
+                  <div class="level">
+                    Nivel: {this.level(this.props.level)} Tablero: {this.props.board}
+                  </div>
+                </div>
               </td>
             </tr>
           </tbody>
         </table>
+
       </section>
     );
   }

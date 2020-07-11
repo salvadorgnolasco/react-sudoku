@@ -60,7 +60,7 @@ class Game extends React.Component {
   constructor(props) {
     super(props);
 
-    const selectedBoard = sudokuHints.filter((item) => item.sudokuId === 5);
+    const selectedBoard = sudokuHints.filter((item) => item.sudokuId === 1);
     const { hints, solution, sudokuId, level } = selectedBoard[0];
 
     this.state = {
@@ -141,6 +141,12 @@ class Game extends React.Component {
     });
   }
 
+  handleNextBoard() {
+    const board = this.state.sudokuId + 1;
+
+    this.requestBoard(board > 46 ? 1 : board);
+  }
+
   /**
    * Check whether the board has been solved or not
    */
@@ -171,11 +177,14 @@ class Game extends React.Component {
     }
 
     const status = this.isSolved() ? 'Good job !' : 'Juego en progreso...';
-    const { currentValues, hints, optionSelected, solutionValues } = this.state;
+    const { currentValues, hints, optionSelected, solutionValues,
+      level, sudokuId } = this.state;
 
     return (
       <section>
         <Board key='board'
+          level={level}
+          board={sudokuId}
           currentValues={currentValues}
           hints={hints}
           optionSelected={optionSelected}
@@ -183,6 +192,7 @@ class Game extends React.Component {
           onClickForOptionSelected={(optionSelected) => this.handleClickForOptionSelected(optionSelected)}
           onClickForBucketSelected={(bucketSelected) => this.handleClickForBucketSelected(bucketSelected)}
           onClickForErase={() => this.handleOnClickForErase()}
+          onClickNextBoard={() => this.handleNextBoard()}
         />
         <h3 className='title'>{status}</h3>
       </section>
